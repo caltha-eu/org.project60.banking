@@ -1,0 +1,43 @@
+{
+    "delimiter": ";",
+    "encoding": "UTF-8",
+    "header": 1,
+    "BIC": "BREXPLPWMUL",
+    "defaults": 
+     {
+       "currency" : "PLN"
+     }
+    ,
+    "rules": [
+        {
+            "from": "#Numer konta",
+            "to": "_ba_id",
+            "type": "set"
+        },
+        {
+            "from": "#Data ksiegowania",
+            "to": "booking_date",
+            "type": "strtotime:Y-m-d"
+        },
+        {
+            "from": "#Data operacji",
+            "to": "value_date",
+            "type": "strtotime:Y-m-d"
+        },
+        {
+            "from": "#Kwota",
+            "to": "amount",
+            "type": "amount"
+        },
+        {
+            "from": "#Nadawca/Odbiorca",
+            "to": "name",
+            "type": "set"
+        },
+        {
+            "from": "#Tytuł",
+            "to": "purpose",
+            "type": "set"
+        }        
+    ]
+}
